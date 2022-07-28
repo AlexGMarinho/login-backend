@@ -9,14 +9,8 @@ let pessoa = {
 };
 
 app.post('/login', function (request, response) {
-    console.log(
-        request.body.email === pessoa.email &&
-            request.body.password === pessoa.password
-    );
-    if (
-        request.body.email === pessoa.email &&
-        request.body.password === pessoa.password
-    ) {
+    console.log(request.body.email === pessoa.email && request.body.password === pessoa.password);
+    if (request.body.email === pessoa.email && request.body.password === pessoa.password) {
         return response.send({ sucesso: true });
     }
     return response.send({ sucesso: false });
